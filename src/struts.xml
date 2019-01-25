@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+   <constant name="struts.action.excludePattern" value="/static/.*?" />
+   <package name="user" namespace="/" extends="struts-default">
+   		<action name="login" class="com.action.UserAction" method="login">
+   			<result name="loginSucc">/main.jsp</result>
+   			<result name="loginErr">/login.jsp</result>
+   		</action>
+   		<action name="addUser" class="com.action.UserAction" method="addUser">
+   			<result name="addUser">/reg.jsp</result>
+   		</action>
+   </package>
+   <package name="goods" namespace="/" extends="struts-default">
+   		<action name="queryAllGoods" class="com.action.GoodsAction" method="queryAllGoods">
+   			<result name="queryAllGoods">/query.jsp</result>
+   		</action>
+   </package>
+   
+   
+</struts>
